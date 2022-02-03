@@ -6,13 +6,13 @@
 </script>
 
 <script>
-    import pages from '$lib/pages/pages.js';
     import whoobe from '$lib/pages/whoobe.js';
     export let slug
 </script>
 
 <svelte:head>
-    <title>{slug}</title>
+    <title>{whoobe.pages[slug].title}</title>
+    <meta name="description" content="{whoobe.description}"/>
 </svelte:head>
 
 

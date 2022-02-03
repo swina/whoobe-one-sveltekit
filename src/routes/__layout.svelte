@@ -13,13 +13,13 @@
 
 
 <svelte:head>
-    
 	<!--Material-icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Google Fonts-->
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={fonts.join('|')}">
 </svelte:head>
+
+
 <Header />
 
 <main>
