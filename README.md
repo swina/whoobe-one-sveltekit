@@ -2,6 +2,9 @@
 
 An alpha project based on SvelteKit that creates a static website using a project exported by [whoobe-one-studio](https://github.com/swina/whoobe-one-studio).
 
+## Demo 
+
+[A simple demo](https://whoobe-one-sveltekit.vercel.app/)
 
 ## Install
 
