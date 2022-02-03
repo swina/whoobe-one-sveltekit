@@ -1,21 +1,16 @@
-# create-svelte
+# whoobe-one-sveltekit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+An alpha project based on SvelteKit that creates a static website using a project exported by [whoobe-one-studio](https://github.com/swina/whoobe-one-studio).
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Install
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+Clone the repo
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+``` 
+npm install
 
-> Note: the `@next` is temporary
-
+``` 
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
@@ -27,6 +22,19 @@ npm run dev
 npm run dev -- --open
 ```
 
+## Importing a whoobe-one-studio project
+
+**whoobe-one-studio** website project are available using the branch **feature-create-website**
+
+From whoobe-one-studio create a website project, add your components or pages and export the project in 
+
+```
+./lib/pages/whoobe.js
+```
+
+The project will automatically create your website. 
+At the moment GSAP animations are not supported.
+
 ## Building
 
 To create a production version of your app:
@@ -37,4 +45,7 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment.
+## Deploying
+
+> By default the project build a full static website
+> To deploy your app copy the build folder to your hosting server
