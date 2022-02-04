@@ -6,15 +6,22 @@
 </script>
 
 <script>
+    import Error from './__error.svelte'
     import whoobe from '$lib/pages/whoobe.js';
     export let slug
+    
 </script>
 
 <svelte:head>
-    <title>{whoobe.pages[slug].title}</title>
-    <meta name="description" content="{whoobe.description}"/>
+    {#if whoobe.pages[slug]}
+        <title>{whoobe.pages[slug].title}</title>
+        <meta name="description" content="{whoobe.description}"/>
+    {/if}
 </svelte:head>
 
-
+{#if whoobe.pages[slug]}
     {@html whoobe.pages[slug].html}
-    <!-- {@html pages[slug].html} -->
+{:else}
+    <Error/>
+{/if}
+    
