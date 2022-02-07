@@ -1,26 +1,32 @@
 <script context="module">
-    export const prerender = true;
-    export async function load ( ctx ){ 
-        return { props: { slug : ctx.params.slug } }
-    }
+    import Error from './__error.svelte'
+    let page, website
+	export async function load({ url, params, fetch, session, stuff }) {
+        let slug = params.slug
+        page = stuff.config.pages[slug]
+		return true
+	}
+    // export async function load ( ctx ){ 
+    //     return { props: { slug : ctx.params.slug } }
+    // }
 </script>
-
+<!-- 
 <script>
     import Error from './__error.svelte'
     import whoobe from '$lib/pages/whoobe.js';
     export let slug
     
-</script>
+</script> -->
 
 <svelte:head>
-    {#if whoobe.pages[slug]}
-        <title>{whoobe.pages[slug].title}</title>
-        <meta name="description" content="{whoobe.description}"/>
+    {#if page}
+        <title>{page.title}</title>
+        <meta name="description" content="{page.description}"/>
     {/if}
 </svelte:head>
 
-{#if whoobe.pages[slug]}
-    {@html whoobe.pages[slug].html}
+{#if page}
+    {@html page.html}
 {:else}
     <Error/>
 {/if}

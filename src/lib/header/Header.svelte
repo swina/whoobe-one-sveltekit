@@ -1,6 +1,8 @@
 <script>
-	import whoobe from '$lib/pages/whoobe.js';
-	let header = whoobe.hasOwnProperty('header') ? whoobe.header : null
+	import { getContext } from 'svelte'
+	let header = getContext ( 'header' )
+	//import config from '$lib/pages/config'
+	//let header = config.header
 </script>
 <svelte:head>
 	{#if header && header.fonts.length }

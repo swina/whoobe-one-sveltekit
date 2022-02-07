@@ -1,7 +1,6 @@
 <script>
-	import { page } from '$app/stores';
-	import whoobe from '$lib/pages/whoobe.js';
-	let footer = whoobe.hasOwnProperty('footer') ? whoobe.footer : null
+	import { getContext } from 'svelte'
+	let footer = getContext ( 'footer' )
 </script>
 <svelte:head>
 	{#if footer && footer.fonts.length }

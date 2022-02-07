@@ -18,5 +18,6 @@
   },
   "type": "module",
   "dependencies": {
+    "vite-plugin-imagemin": "^0.6.1"
   }
 }
