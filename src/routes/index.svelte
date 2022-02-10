@@ -1,10 +1,16 @@
-<script context="module">
+<!-- <script context="module">
     let home, website
 	export async function load({ url, fetch, session, stuff }) {
 		website = stuff.config
-        home = website.pages['home']
+        home = website.homepage
+        console.log ( home )
 		return true
 	}
+</script> -->
+<script>
+    import { getContext } from 'svelte'
+    let website = getContext('website');
+    let home = website.homepage
 </script>
 <svelte:head>
     {#if website}

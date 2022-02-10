@@ -1,22 +1,32 @@
 <script context="module">
-    import Error from './__error.svelte'
-    let page, website
-	export async function load({ url, params, fetch, session, stuff }) {
-        let slug = params.slug
-        page = stuff.config.pages[slug]
-		return true
-	}
-    // export async function load ( ctx ){ 
-    //     return { props: { slug : ctx.params.slug } }
-    // }
+    
+    // let page, website
+	// export async function load({ url, params, fetch, session, stuff }) {
+    //     let slug = params.slug
+    //     page = stuff.config.pages[slug]
+	// 	return true
+	// }
+    import whoobe from '$lib/pages/config.js'
+    export async function load ( ctx ){ 
+        return { 
+            props: { 
+                page: whoobe.pages[ctx.params.slug]
+            } 
+        }
+    }
 </script>
-<!-- 
+
 <script>
     import Error from './__error.svelte'
-    import whoobe from '$lib/pages/whoobe.js';
-    export let slug
-    
-</script> -->
+    import { getContext } from 'svelte'
+	export let page
+    // let pages = getContext ( 'pages' );
+    // let page 
+    // if ( pages[slug] ) {
+    //     page = pages[slug];
+        // console.log ( page.fonts )
+    // }
+</script>
 
 <svelte:head>
     {#if page}
